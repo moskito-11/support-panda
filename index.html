@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>Support Box จากมอส</title>
+    <style>
+        body {
+            background-color: #f0f7f4; /* สีเขียวมินต์พาสเทล */
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        button {
+            background-color: #ff9a9e; /* สีชมพูหัวใจ */
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover { transform: scale(1.1); }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>🐼 กดปุ่มนี้เพื่อรับพลังงานด่วน 🐼</h2>
+        <br>
+        <button onclick="sendLove()">คลิกเติมพลัง</button>
+    </div>
+
+    <script>
+        function sendLove() {
+            alert("✨ วันนี้เหนื่อยมั้ยสู้ๆ น้าา มอสซัพพอร์ตอยู่ตรงนี้เสมอครับ! 💖");
+        }
+    </script>
+
+</body>
+</html>
