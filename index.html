@@ -2,10 +2,10 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <title>Support Box จากมอส</title>
+    <title>⚠️ System Alert ⚠️</title>
     <style>
         body {
-            background-color: #f0f7f4; /* สีเขียวมินต์พาสเทล */
+            background-color: #2c3e50; /* สีพื้นเข้มๆ ให้ดูขลังเหมือนหน้าจอเจาะระบบ */
             font-family: 'Arial', sans-serif;
             display: flex;
             justify-content: center;
@@ -17,59 +17,94 @@
             background: white;
             padding: 30px;
             border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(255, 75, 75, 0.4); /* เงาสีแดงเตือนภัย */
             text-align: center;
-            max-width: 300px;
+            max-width: 320px;
+            border: 4px solid #ff4b4b; /* ขอบแดงเตือนภัย */
+        }
+        h2 {
+            color: #ff4b4b;
+            margin-top: 0;
+            font-size: 24px;
         }
         button {
-            background-color: #ff9a9e; /* สีชมพูหัวใจ */
+            background-color: #ff4b4b; /* สีแดงฉุกเฉิน */
             color: white;
             border: none;
             padding: 15px 30px;
             font-size: 18px;
+            font-weight: bold;
             border-radius: 50px;
             cursor: pointer;
             transition: 0.3s;
             margin-bottom: 10px;
+            box-shadow: 0 4px 15px rgba(255, 75, 75, 0.5);
+            animation: pulse 1.5s infinite; /* ทำให้ปุ่มเต้นตุบๆ กระตุ้นให้กด */
         }
-        button:hover { transform: scale(1.1); }
+        button:hover {
+            transform: scale(1.1);
+            background-color: #d50000;
+        }
         
-        /* ซ่อนกล่องรูปภาพไว้ก่อนกดปุ่ม */
-        #gifContainer {
+        /* Animation ปุ่มเต้น */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* ซ่อนกล่องรูปภาพไว้ก่อนกดปุ่ม + ใส่เอฟเฟกต์เด้ง */
+        #alertContainer {
             display: none; 
             margin-top: 15px;
+            animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
-        #gifContainer img {
+        @keyframes popIn {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        #alertContainer img {
             width: 100%;
             border-radius: 15px;
+            margin-bottom: 15px;
         }
         .message {
-            color: #ff9a9e;
+            color: #d50000;
             font-weight: bold;
-            margin-top: 15px;
-            font-size: 16px;
+            font-size: 22px;
+            line-height: 1.4;
+        }
+        .sub-message {
+            color: #333;
+            font-size: 15px;
+            margin-top: 10px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
     <div class="card">
-        <h2>🐼 รับพลังงานด่วน 🐼</h2>
+        <h2 id="headerText">⚠️ คำเตือนจากระบบ ⚠️</h2>
         <br>
-        <button id="loveBtn" onclick="sendLove()">คลิกเติมพลัง</button>
+        <button id="scanBtn" onclick="triggerAlert()">กดเพื่อสแกนใบหน้า</button>
         
-        <div id="gifContainer">
-            <img src="cat.gif" alt="Cute GIF">
-            <div class="message">✨ วันนี้เหนื่อยมั้ยสู้ๆ น้าา มอสซัพพอร์ตอยู่ตรงนี้เสมอครับ! 💖</div>
+        <div id="alertContainer">
+            <img src="cat.gif" alt="Alert GIF">
+            <div class="message">🚨 ตรวจพบคนน่ารัก! 🚨<br>ความน่ารักระดับ 1,000,000%</div>
+            <div class="sub-message">ข้อควรระวัง: รอยยิ้มของคุณ "สติกเกอร์" อาจทำให้เดฟ 190 ซม. ใจละลายเฉียบพลันได้ 💖✨</div>
         </div>
     </div>
 
     <script>
-        function sendLove() {
-            // สั่งให้โชว์รูป GIF
-            document.getElementById("gifContainer").style.display = "block";
-            // สั่งให้ซ่อนปุ่มทิ้งไปเลย ให้เหลือแต่ความน่ารัก
-            document.getElementById("loveBtn").style.display = "none";
+        function triggerAlert() {
+            // สั่งให้โชว์กล่องแจ้งเตือน
+            document.getElementById("alertContainer").style.display = "block";
+            // สั่งให้ซ่อนปุ่มสแกนทิ้งไป
+            document.getElementById("scanBtn").style.display = "none";
+            // เปลี่ยนข้อความ Header ด้านบนให้ดูตกใจขั้นสุด
+            document.querySelector("#headerText").innerText = "🛑 SYSTEM BREACH! 🛑";
         }
     </script>
 
