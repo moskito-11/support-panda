@@ -2,34 +2,34 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <title>⚠️ System Alert ⚠️</title>
+    <title>💙 System Support 💙</title>
     <style>
         body {
-            background-color: #1a1a1a; /* เปลี่ยนเป็นสีดำขลับให้ดูแพงและจริงจังขึ้น */
+            background-color: #0f172a; /* เปลี่ยนเป็นสีน้ำเงินเข้ม อบอุ่น สงบ ไม่ดุดัน */
             font-family: 'Arial', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            overflow: hidden; /* กันหน้าจอเลื่อนเวลาเด้ง animation */
+            overflow: hidden; 
         }
         .card {
             background: white;
             padding: 30px;
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(255, 75, 75, 0.6); 
+            box-shadow: 0 10px 40px rgba(56, 189, 248, 0.4); /* เงาสีฟ้าละมุนๆ */
             text-align: center;
             max-width: 320px;
-            border: 4px solid #ff4b4b; 
+            border: 4px solid #38bdf8; /* ขอบสีฟ้าซัพพอร์ต */
         }
         h2 {
-            color: #ff4b4b;
+            color: #0284c7; /* สีฟ้าเข้ม */
             margin-top: 0;
             font-size: 24px;
         }
         button {
-            background-color: #ff4b4b; 
+            background-color: #38bdf8; /* ปุ่มสีฟ้าสบายตา */
             color: white;
             border: none;
             padding: 15px 30px;
@@ -39,28 +39,29 @@
             cursor: pointer;
             transition: 0.3s;
             margin-bottom: 10px;
-            box-shadow: 0 4px 15px rgba(255, 75, 75, 0.5);
-            animation: pulse 1.5s infinite; 
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.5);
+            animation: float 2s ease-in-out infinite; /* เปลี่ยนจาก pulse เตือนภัย เป็น float ลอยละมุนๆ */
         }
         button:hover {
-            transform: scale(1.1);
-            background-color: #d50000;
+            transform: translateY(-5px);
+            background-color: #0284c7;
         }
         
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+        /* Animation ลอยขึ้นลงเบาๆ */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
         }
 
         #alertContainer {
             display: none; 
             margin-top: 15px;
-            animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            animation: fadeIn 0.8s ease-in-out; /* เปลี่ยนเด้งแรงๆ เป็นค่อยๆ สว่างขึ้นมาแบบอบอุ่น */
         }
-        @keyframes popIn {
-            0% { transform: scale(0); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
         
         #alertContainer img {
@@ -69,43 +70,44 @@
             margin-bottom: 15px;
         }
         .message {
-            color: #d50000;
+            color: #0284c7;
             font-weight: bold;
             font-size: 22px;
             line-height: 1.4;
         }
         .sub-message {
-            color: #333;
+            color: #475569;
             font-size: 15px;
             margin-top: 10px;
-            font-weight: bold;
+            line-height: 1.5;
         }
-        /* เพิ่มกล่องสถานะ Official */
+        /* กล่องสถานะ ซัพพอร์ต */
         .status-box {
-            background-color: #ffebf0;
-            color: #d50000;
-            padding: 10px;
+            background-color: #f0f9ff;
+            color: #0369a1;
+            padding: 12px;
             border-radius: 10px;
             margin-top: 15px;
             font-size: 14px;
             font-weight: bold;
-            border: 2px dashed #ff9a9e;
+            border: 2px dashed #7dd3fc;
         }
     </style>
 </head>
 <body>
 
     <div class="card">
-        <h2 id="headerText">⚠️ สแกนสถานะหัวใจ ⚠️</h2>
+        <h2 id="headerText">💌 ข้อความจากระบบ 💌</h2>
         <br>
-        <button id="scanBtn" onclick="triggerAlert()">กดเพื่อดูผลลัพธ์</button>
+        <button id="scanBtn" onclick="triggerAlert()">กดรับกำลังใจ</button>
         
         <div id="alertContainer">
             <img src="red panda GIF by Digg.gif" alt="Cute Panda GIF">
-            <div class="message">🚨 สถานะ: เลิกเนียนแล้ว! 🚨</div>
-            <div class="sub-message">แจ้งให้คุณ "สติกเกอร์" ทราบ:<br>เด็กชายมอส คนนี้ เค้าไม่ได้มาเล่นๆ นะคับ!! ✨</div>
+            <div class="message">✨ พลังงานบวกพร้อมส่ง! ✨</div>
+            <div class="sub-message">ส่งถึงคุณ "สติกเกอร์":<br>ขอให้การเรียนปี 2 ผ่านไปได้ด้วยดีนะ ตั้งใจเรียน เก็บเกี่ยวประสบการณ์ให้เต็มที่เลย! ✌️</div>
+            
             <div class="status-box">
-                ✔️ STATUS: Official Flirting<br>( 🤔💖 จีบอยู่นะรู้ยัง 🤔💖)
+                ✔️ SYSTEM STATUS: Always Support<br>(เป็นกำลังใจให้อยู่ตรงนี้นะ ฝันดีคับคุณพยาบาล 🐼💙)
             </div>
         </div>
     </div>
@@ -114,8 +116,8 @@
         function triggerAlert() {
             document.getElementById("alertContainer").style.display = "block";
             document.getElementById("scanBtn").style.display = "none";
-            // เปลี่ยน Header ให้ดูแพงและยืนยันสถานะ
-            document.querySelector("#headerText").innerText = "🛑 SYSTEM CONFIRMED 🛑";
+            // เปลี่ยน Header ให้ดูอบอุ่น
+            document.querySelector("#headerText").innerText = "💙 SYSTEM COMPLETED 💙";
         }
     </script>
 
