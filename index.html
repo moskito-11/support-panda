@@ -103,3 +103,24 @@
         <button id="scanBtn" onclick="triggerAlert()">Decode Message</button>
         
         <div id="alertContainer">
+            <img src="red-panda.gif" alt="Cute Panda GIF"> 
+            <div class="message">🔥 แก... เราไม่อยากยอมแพ้ว่ะ 🔥</div>
+            <div class="sub-message">ถ้าแกให้ความสำคัญกับการสื่อสาร<br>นี่คือความรู้สึกทั้งหมดจากเราแบบไม่กั๊ก</div>
+            
+            <div class="status-box">
+                ✔️ STATUS: FIGHTING<br>(จะอยู่ใกล้หรือไกล ถ้าตั้งใจซะอย่าง ระบบเราไม่มีวันล่มแน่นอน 🐼💪)
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function triggerAlert() {
+            document.getElementById("alertContainer").style.display = "block";
+            document.getElementById("scanBtn").style.display = "none";
+            // เปลี่ยน Header ให้ดูจริงจัง
+            document.querySelector("#headerText").innerText = "🔥 COMMUNICATION MATTERS 🔥";
+        }
+    </script>
+
+</body>
+</html>
