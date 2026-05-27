@@ -1,89 +1,109 @@
-
 <!DOCTYPE html>
 <html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support Box จากมอส</title>
+    <title>Support Box จากกัปตันมอส 🚑✨</title>
     <style>
         body {
-            background-color: #f0f7f4; /* สีเขียวมินต์พาสเทล */
-            font-family: 'Arial', sans-serif;
+            /* เปลี่ยนพื้นหลังให้เข้ากับธีมสีม่วง Excel ของมึง */
+            background-color: #f3e5f5; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            overflow: hidden; /* กันหน้าจอเลื่อนตอนรูปเด้ง */
+            overflow: hidden;
         }
         .card {
             background: white;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            padding: 35px 25px;
+            border-radius: 25px;
+            box-shadow: 0 15px 30px rgba(112, 48, 160, 0.15); /* เงาสีม่วงอ่อน */
             text-align: center;
-            max-width: 320px;
-            border: 3px solid #ff9a9e; /* เพิ่มขอบสีชมพูให้ดูมีมิติ */
+            max-width: 350px;
+            border: 3px solid #7030A0; /* ขอบสีม่วง Sanrio */
         }
         h2 {
-            color: #ff9a9e;
+            color: #7030A0; /* สีม่วง Excel */
             margin-top: 0;
             font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
         }
         button {
-            background-color: #ff9a9e; /* สีชมพูหัวใจ */
+            background: linear-gradient(135deg, #9b59b6, #7030A0); /* ไล่สีม่วงดูแพง */
             color: white;
             border: none;
-            padding: 15px 30px;
+            padding: 16px 32px;
             font-size: 18px;
             font-weight: bold;
             border-radius: 50px;
             cursor: pointer;
-            transition: 0.3s;
-            margin-bottom: 10px;
-            box-shadow: 0 4px 10px rgba(255, 154, 158, 0.4); /* เพิ่มเงาให้ปุ่มดูนูน */
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(112, 48, 160, 0.4);
         }
         button:hover {
-            transform: scale(1.05) translateY(-3px); /* Hover แล้วปุ่มเด้งขึ้นนิดนึง */
-            box-shadow: 0 6px 15px rgba(255, 154, 158, 0.6);
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 0 8px 20px rgba(112, 48, 160, 0.6);
+        }
+        button:active {
+            transform: scale(0.95);
         }
         
         /* ซ่อนกล่องรูปภาพไว้ก่อนกดปุ่ม */
         #gifContainer {
             display: none; 
-            margin-top: 15px;
-            animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* อนิเมชันเด้งดึ๋ง */
+            margin-top: 20px;
+            animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
         }
         
         @keyframes popIn {
-            0% { opacity: 0; transform: scale(0.5); }
-            100% { opacity: 1; transform: scale(1); }
+            0% { opacity: 0; transform: scale(0.3) rotate(-5deg); }
+            50% { transform: scale(1.05) rotate(2deg); }
+            100% { opacity: 1; transform: scale(1) rotate(0deg); }
         }
 
         #gifContainer img {
             width: 100%;
             border-radius: 15px;
-            border: 2px solid #f0f7f4;
+            border: 2px solid #7030A0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         .message {
-            color: #ff9a9e;
+            color: #7030A0;
             font-weight: bold;
-            margin-top: 15px;
+            margin-top: 18px;
             font-size: 16px;
-            line-height: 1.5;
+            line-height: 1.6;
+        }
+        .highlight {
+            color: #FF3333; /* เน้นสีแดง */
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
 
     <div class="card">
-        <h2>🐼 รับพลังงานด่วน 🐼</h2>
-        <br>
-        <button id="loveBtn" onclick="sendLove()">คลิกเติมพลัง ⚡</button>
+        <h2>🚑 หน่วยฉุกเฉิน ม.อ. 🚑</h2>
+        <div class="subtitle" id="subtitleText">ตรวจพบคุณพยาบาลพลังงานตก!</div>
+        
+        <button id="loveBtn" onclick="sendLove()">รับการฮีลใจ 💉✨</button>
         
         <div id="gifContainer">
-            <img src="pandaa.png" alt="Cute GIF">
-            <div class="message">✨ วันนี้เหนื่อยมั้ยสู้ๆ น้าา<br>มอสซัพพอร์ตอยู่ตรงนี้เสมอครับ! 💖</div>
+            <img src="sanrio-excel.png" alt="Sanrio Squad Excel Art">
+            <div class="message">
+                เหนื่อยมั้ย? แก๊งซานริโอ้พร้อมเฝ้าจอแล้วนะ!<br>
+                <span class="highlight">YOUR SANRIO SQUAD IS READY!</span><br>
+                สู้ๆ นะครับมอสซัพพอร์ตอยู่ตรงนี้เสมอ 💖
+            </div>
         </div>
     </div>
 
@@ -93,8 +113,11 @@
             document.getElementById("gifContainer").style.display = "block";
             // สั่งให้ซ่อนปุ่มทิ้งไปเลย
             document.getElementById("loveBtn").style.display = "none";
+            // ซ่อนข้อความ subtitle เดิม
+            document.getElementById("subtitleText").style.display = "none";
         }
     </script>
 
 </body>
 </html>
+
