@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lunch Time Reminder 🍱✨</title>
+    <title>Support Box จากกัปตันมอส 🚑✨</title>
     <style>
         body {
+            /* เปลี่ยนพื้นหลังให้เข้ากับธีมสีม่วง Excel ของมึง */
             background-color: #f3e5f5; 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
@@ -19,13 +20,13 @@
             background: white;
             padding: 35px 25px;
             border-radius: 25px;
-            box-shadow: 0 15px 30px rgba(112, 48, 160, 0.15); 
+            box-shadow: 0 15px 30px rgba(112, 48, 160, 0.15); /* เงาสีม่วงอ่อน */
             text-align: center;
             max-width: 350px;
-            border: 3px solid #7030A0; 
+            border: 3px solid #7030A0; /* ขอบสีม่วง Sanrio */
         }
         h2 {
-            color: #7030A0; 
+            color: #7030A0; /* สีม่วง Excel */
             margin-top: 0;
             font-size: 24px;
             font-weight: 800;
@@ -37,7 +38,7 @@
             margin-bottom: 20px;
         }
         button {
-            background: linear-gradient(135deg, #9b59b6, #7030A0); 
+            background: linear-gradient(135deg, #9b59b6, #7030A0); /* ไล่สีม่วงดูแพง */
             color: white;
             border: none;
             padding: 16px 32px;
@@ -56,6 +57,7 @@
             transform: scale(0.95);
         }
         
+        /* ซ่อนกล่องรูปภาพไว้ก่อนกดปุ่ม */
         #gifContainer {
             display: none; 
             margin-top: 20px;
@@ -82,35 +84,36 @@
             line-height: 1.6;
         }
         .highlight {
-            color: #FF3333; 
+            color: #FF3333; /* เน้นสีแดง */
             font-size: 18px;
-            display: inline-block;
-            margin-top: 10px;
         }
     </style>
 </head>
 <body>
 
     <div class="card">
-        <h2>🍱 Time for Lunch! 🍱</h2>
-        <div class="subtitle" id="subtitleText">มีข้อความห่วงใยส่งตรงมาจากเด็กชายมอส!</div>
+        <h2>🚑 หน่วยฉุกเฉิน ม.อ. 🚑</h2>
+        <div class="subtitle" id="subtitleText">ตรวจพบคุณพยาบาลพลังงานตก!</div>
         
-        <button id="loveBtn" onclick="sendLove()">✨ กดเปิดอ่านข้อความ 🍲 ✨</button>
+        <button id="loveBtn" onclick="sendLove()">รับการฮีลใจ 💉✨</button>
         
         <div id="gifContainer">
-            <img src="hungry red panda GIF.gif" alt="Sanrio Squad Excel Art">
+            <img src="sanrio-excel.png" alt="Sanrio Squad Excel Art">
             <div class="message">
-                เที่ยงแล้วอย่าลืมหาอะไรกินน้าคุณพยาบาล 🍜<br>
-                พักเบรกเติมพลังด้วยนะครับ!<br>
-                <span class="highlight">😋 กินเยอะๆ จะได้มีแรง 😋</span>
+                เหนื่อยมั้ย? แก๊งซานริโอ้พร้อมเฝ้าจอแล้วนะ!<br>
+                <span class="highlight">YOUR SANRIO SQUAD IS READY!</span><br>
+                สู้ๆ นะครับมอสซัพพอร์ตอยู่ตรงนี้เสมอ 💖
             </div>
         </div>
     </div>
 
     <script>
         function sendLove() {
+            // สั่งให้โชว์รูป GIF พร้อมอนิเมชันเด้ง
             document.getElementById("gifContainer").style.display = "block";
+            // สั่งให้ซ่อนปุ่มทิ้งไปเลย
             document.getElementById("loveBtn").style.display = "none";
+            // ซ่อนข้อความ subtitle เดิม
             document.getElementById("subtitleText").style.display = "none";
         }
     </script>
