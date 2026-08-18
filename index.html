@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>✨กำลังใจจาก KITO MOS✨</title>
     <style>
-        /* 1. อัปเกรด Body ให้มี Animated Gradient */
+        /* ตั้งค่าพื้นหลังและฟอนต์ */
         body {
             margin: 0;
             padding: 0;
@@ -26,81 +26,50 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* 2. ลูกเล่นฟองอากาศลอยดุ๊กดิ๊ก (Floating Bubbles) */
+        /* ฟองอากาศลอยดุ๊กดิ๊กด้านหลัง */
         .bubbles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0; 
-            overflow: hidden;
-            pointer-events: none; 
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; pointer-events: none;
         }
         .bubbles li {
-            position: absolute;
-            display: block;
-            list-style: none;
-            width: 20px;
-            height: 20px;
-            animation: floatUp 12s linear infinite; 
-            bottom: -150px;
-            border-radius: 50%;
+            position: absolute; display: block; list-style: none; animation: floatUp 12s linear infinite; bottom: -150px; border-radius: 50%; background: rgba(255, 255, 255, 0.4);
         }
+        .bubbles li:nth-child(1) { left: 25%; width: 80px; height: 80px; animation-delay: 0s; }
+        .bubbles li:nth-child(2) { left: 10%; width: 20px; height: 20px; animation-delay: 1s; animation-duration: 6s; }
+        .bubbles li:nth-child(3) { left: 70%; width: 40px; height: 40px; animation-delay: 2s; }
+        .bubbles li:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 8s; }
         
-        .bubbles li:nth-child(1) { left: 25%; width: 80px; height: 80px; animation-delay: 0s; background: rgba(255, 182, 193, 0.4); } 
-        .bubbles li:nth-child(2) { left: 10%; width: 20px; height: 20px; animation-delay: 1s; animation-duration: 6s; background: rgba(135, 206, 235, 0.4); } 
-        .bubbles li:nth-child(3) { left: 70%; width: 40px; height: 40px; animation-delay: 2s; background: rgba(221, 160, 221, 0.4); } 
-        .bubbles li:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 8s; background: rgba(255, 255, 153, 0.4); } 
-        .bubbles li:nth-child(5) { left: 65%; width: 20px; height: 20px; animation-delay: 0s; background: rgba(152, 251, 152, 0.4); } 
-        .bubbles li:nth-child(6) { left: 75%; width: 110px; height: 110px; animation-delay: 1.5s; background: rgba(255, 160, 122, 0.4); } 
-        .bubbles li:nth-child(7) { left: 35%; width: 150px; height: 150px; animation-delay: 3s; background: rgba(175, 238, 238, 0.4); } 
-        .bubbles li:nth-child(8) { left: 50%; width: 25px; height: 25px; animation-delay: 5s; animation-duration: 15s; background: rgba(238, 130, 238, 0.4); } 
-        .bubbles li:nth-child(9) { left: 20%; width: 15px; height: 15px; animation-delay: 1s; animation-duration: 10s; background: rgba(255, 105, 180, 0.4); } 
-        .bubbles li:nth-child(10) { left: 85%; width: 150px; height: 150px; animation-delay: 0s; animation-duration: 7s; background: rgba(255, 218, 185, 0.4); } 
-
         @keyframes floatUp {
             0% { transform: translateY(0) rotate(0deg); opacity: 1; }
             100% { transform: translateY(-1000px) rotate(360deg); opacity: 0; }
         }
 
-        /* 3. กล่อง Card ด้านหน้า */
+        /* กล่องข้อความหลัก */
         .card {
-            background: rgba(255, 255, 255, 0.95); 
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            padding: 35px 25px;
+            padding: 40px 25px;
             border-radius: 25px;
             box-shadow: 0 15px 35px rgba(112, 48, 160, 0.2);
             text-align: center;
             max-width: 350px;
-            width: 90%; 
-            border: 3px solid rgba(112, 48, 160, 0.8); 
+            width: 90%;
+            border: 3px solid rgba(112, 48, 160, 0.8);
             position: relative;
-            z-index: 1; 
-        }
-        
-        h2 {
-            color: #7030A0;
-            margin-top: 0;
-            font-size: 24px;
-            font-weight: 900;
-            letter-spacing: 1px;
-        }
-        .subtitle {
-            color: #666;
-            font-size: 15px;
-            margin-bottom: 25px;
-            font-weight: 500;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(112, 48, 160, 0.7); }
-            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(112, 48, 160, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(112, 48, 160, 0); }
+            z-index: 10;
         }
 
+        h2 { color: #7030A0; margin-top: 0; font-size: 24px; font-weight: 900; letter-spacing: 1px; }
+        .subtitle { color: #666; font-size: 15px; margin-bottom: 25px; font-weight: 500; }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(255, 107, 107, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 107, 107, 0); }
+        }
+
+        /* ปุ่มกดรับกำลังใจ */
         button {
-            background: linear-gradient(135deg, #9b59b6, #7030A0);
+            background: linear-gradient(135deg, #FF6B6B, #9b59b6);
             color: white;
             border: none;
             padding: 16px 32px;
@@ -109,118 +78,102 @@
             border-radius: 50px;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 6px 15px rgba(112, 48, 160, 0.4);
-            animation: pulse 2s infinite; 
+            box-shadow: 0 6px 15px rgba(255, 107, 107, 0.4);
+            animation: pulse 2s infinite;
         }
-        button:hover {
-            transform: scale(1.08) translateY(-3px);
-            box-shadow: 0 8px 20px rgba(112, 48, 160, 0.6);
-            animation: none; 
-        }
-        button:active {
-            transform: scale(0.95);
-        }
-        
-        #loadingContainer {
-            display: none;
-            width: 100%;
-            height: 20px;
-            background-color: #e0e0e0;
-            border-radius: 10px;
-            margin: 20px 0;
-            overflow: hidden;
-            box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
-        }
-        #loadingBar {
-            width: 0%;
-            height: 100%;
-            background: linear-gradient(90deg, #FF6B6B, #9b59b6, #7030A0);
-            border-radius: 10px;
-            transition: width 2s cubic-bezier(0.4, 0, 0.2, 1); 
-        }
+        button:hover { transform: scale(1.08) translateY(-3px); animation: none; }
+        button:active { transform: scale(0.95); }
 
-        #gifContainer {
-            display: none; 
-            margin-top: 20px;
-            animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-        }
+        /* คอนเทนเนอร์ข้อความหลังกดปุ่ม */
+        #messageContainer { display: none; margin-top: 20px; animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        @keyframes popIn { 0% { opacity: 0; transform: scale(0.3); } 50% { transform: scale(1.05); } 100% { opacity: 1; transform: scale(1); } }
         
-        @keyframes popIn {
-            0% { opacity: 0; transform: scale(0.3) rotate(-5deg); }
-            50% { transform: scale(1.05) rotate(2deg); }
-            100% { opacity: 1; transform: scale(1) rotate(0deg); }
-        }
+        .message { color: #7030A0; font-weight: bold; font-size: 17px; line-height: 1.6; }
+        .highlight { color: #FF3333; font-size: 20px; }
 
-        #gifContainer img {
-            width: 100%;
-            border-radius: 15px;
-            border: 2px solid #7030A0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        /* ตั้งค่าระบบพลุหัวใจ (Particle System) */
+        #heart-container {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999; overflow: hidden;
         }
-        .message {
-            color: #7030A0;
-            font-weight: bold;
-            margin-top: 18px;
-            font-size: 16px;
-            line-height: 1.6;
-        }
-        .highlight {
-            color: #FF3333; 
-            font-size: 17px;
+        .heart {
+            position: absolute; bottom: -50px; left: 50%; transform: translateX(-50%); font-size: 2rem; opacity: 1;
         }
     </style>
 </head>
 <body>
 
     <ul class="bubbles">
-        <li></li><li></li><li></li><li></li><li></li>
-        <li></li><li></li><li></li><li></li><li></li>
+        <li></li><li></li><li></li><li></li>
     </ul>
+
+    <!-- คอนเทนเนอร์สำหรับระเบิดหัวใจ -->
+    <div id="heart-container"></div>
 
     <div class="card">
         <h2>✨กำลังใจจาก KITO MOS✨</h2>
-        <div class="subtitle" id="subtitleText">ระบบตรวจพบ: คุณพยาบาลกำลังเตรียมตัวออกรบกับข้อสอบ! 📚⚔️</div>
+        <div class="subtitle" id="subtitleText">ระบบตรวจพบ: วันนี้คุณพยาบาลทำงานเหนื่อยมาก! 🥺💖</div>
         
-        <button id="loveBtn" onclick="sendLove()">✨ กดรับบัฟพลังใจก่อนเข้าสอบ ✨</button>
-        
-        <div id="loadingContainer">
-            <div id="loadingBar"></div>
-        </div>
+        <button id="loveBtn" onclick="explodeHearts()">✨ กดรับบัฟพลังใจแบบจัดเต็ม ✨</button>
 
-        <div id="gifContainer">
-            <!-- ไฟล์แพนด้าแดงของมึง -->
-            <img src="S__9404419.jpg" alt="Red Panda Cheer">
+        <div id="messageContainer">
             <div class="message">
-                ✨ เติมบัฟพลังใจเต็มหลอด! ✨<br>
-                <span class="highlight">ข้อสอบจะยากแค่ไหนก็สู้เค้านะ! ขอให้อ่านตรงไหนก็ออกตรงนั้น ทำได้ทุกข้อ All A ไปเลยยย! 💯✌️</span><br>
-                เหนื่อยก็พักบ้างนะ หนุ่มคอมคนนี้ส่งกำลังใจให้เสมอ สู้ๆ ค้าบบบ! 🐼💕
+                <span class="highlight">ปิ้ววววววววว! ❤️💖💕✨</span><br><br>
+                รู้ว่าวันนี้งานหนักแล้วก็เหนื่อยมากๆ<br>
+                เก่งมากแล้วนะคนเก่งที่ผ่านวันนี้มาได้!<br><br>
+                ทิ้งตัวพักผ่อนได้เลยนะ ปล่อยให้หัวใจพวกนี้ช่วยนวดไหล่ผ่านจอไปก่อนน้าา 💆‍♀️🫶
             </div>
         </div>
     </div>
 
     <script>
-        function sendLove() {
+        function explodeHearts() {
+            // ซ่อนปุ่มและข้อความเดิม เปิดข้อความใหม่
             document.getElementById("loveBtn").style.display = "none";
-            let subtitle = document.getElementById("subtitleText");
-            subtitle.innerHTML = "กำลัง Compile พลังใจส่งตรงให้คุณพยาบาล... ⏳💻<br>Please Wait...";
-            subtitle.style.color = "#FF6B6B";
-            subtitle.style.fontWeight = "bold";
-            
-            let loadingContainer = document.getElementById("loadingContainer");
-            let loadingBar = document.getElementById("loadingBar");
-            loadingContainer.style.display = "block";
-            
-            setTimeout(() => {
-                loadingBar.style.width = "100%";
-            }, 100);
+            document.getElementById("subtitleText").style.display = "none";
+            document.getElementById("messageContainer").style.display = "block";
 
-            setTimeout(() => {
-                loadingContainer.style.display = "none";
-                subtitle.style.display = "none";
-                document.getElementById("gifContainer").style.display = "block";
-            }, 2200); 
+            const container = document.getElementById("heart-container");
+            const emojis = ["❤️", "💖", "💕", "✨", "🫶", "🥰"];
+            const totalHearts = 150; // จำนวนหัวใจที่ต้องการให้พุ่งออกมา
+
+            // ฟังก์ชันเสกหัวใจทีละดวง
+            for (let i = 0; i < totalHearts; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement("div");
+                    heart.classList.add("heart");
+                    heart.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+                    
+                    // สุ่มขนาดให้ดูมีมิติ
+                    heart.style.fontSize = (Math.random() * 30 + 15) + "px";
+                    
+                    // สุ่มระยะการกระจายซ้าย-ขวา
+                    const spreadX = (Math.random() - 0.5) * window.innerWidth;
+                    // สุ่มความสูงที่หัวใจจะลอยไปถึง
+                    const flyHeight = -(Math.random() * window.innerHeight + 100);
+                    // สุ่มระยะเวลาลอย
+                    const duration = Math.random() * 2000 + 1500;
+
+                    // สร้าง Animation ด้วย JavaScript Web Animations API
+                    heart.animate([
+                        { transform: `translate(-50%, 0px) scale(0.5)`, opacity: 1 },
+                        { transform: `translate(calc(-50% + ${spreadX/2}px), ${flyHeight/2}px) scale(1.2)`, opacity: 1 },
+                        { transform: `translate(calc(-50% + ${spreadX}px), ${flyHeight}px) scale(0.8)`, opacity: 0 }
+                    ], {
+                        duration: duration,
+                        easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                        fill: 'forwards'
+                    });
+
+                    container.appendChild(heart);
+                    
+                    // เคลียร์ DOM เมื่อ Animation จบเพื่อไม่ให้เครื่องค้าง
+                    setTimeout(() => {
+                        heart.remove();
+                    }, duration);
+
+                }, i * 15); // ดีเลย์การเกิดทีละ 15 milliseconds ให้ดูพุ่งเป็นสายน้ำ
+            }
         }
     </script>
-
 </body>
 </html>
