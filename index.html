@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>✨กำลังใจจาก KITO MOS✨</title>
+    <title>✨ พลังสู้ๆ จาก KITO MOS ✨</title>
     <style>
         /* ตั้งค่าพื้นหลังและฟอนต์ */
         body {
@@ -47,7 +47,7 @@
         .card {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            padding: 40px 25px;
+            padding: 30px 25px;
             border-radius: 25px;
             box-shadow: 0 15px 35px rgba(112, 48, 160, 0.2);
             text-align: center;
@@ -58,38 +58,56 @@
             z-index: 10;
         }
 
-        h2 { color: #7030A0; margin-top: 0; font-size: 24px; font-weight: 900; letter-spacing: 1px; }
-        .subtitle { color: #666; font-size: 15px; margin-bottom: 25px; font-weight: 500; }
+        /* สไตล์สำหรับรูปภาพสู้ๆ 2 นิ้ว */
+        .profile-pic {
+            width: 100%;
+            max-width: 220px;
+            border-radius: 15px;
+            border: 3px solid #9b59b6;
+            margin-bottom: 15px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+            animation: floatUpAndDown 3s ease-in-out infinite;
+            object-fit: cover;
+        }
+
+        @keyframes floatUpAndDown {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+
+        h2 { color: #7030A0; margin-top: 0; font-size: 22px; font-weight: 900; letter-spacing: 1px; }
+        .subtitle { color: #666; font-size: 14px; margin-bottom: 20px; font-weight: 500; }
 
         @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7); }
-            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(255, 107, 107, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 107, 107, 0); }
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(155, 89, 182, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(155, 89, 182, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(155, 89, 182, 0); }
         }
 
         /* ปุ่มกดรับกำลังใจ */
         button {
-            background: linear-gradient(135deg, #FF6B6B, #9b59b6);
+            background: linear-gradient(135deg, #9b59b6, #FF6B6B);
             color: white;
             border: none;
-            padding: 16px 32px;
-            font-size: 18px;
+            padding: 14px 28px;
+            font-size: 16px;
             font-weight: bold;
             border-radius: 50px;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 6px 15px rgba(255, 107, 107, 0.4);
+            box-shadow: 0 6px 15px rgba(155, 89, 182, 0.4);
             animation: pulse 2s infinite;
         }
         button:hover { transform: scale(1.08) translateY(-3px); animation: none; }
         button:active { transform: scale(0.95); }
 
         /* คอนเทนเนอร์ข้อความหลังกดปุ่ม */
-        #messageContainer { display: none; margin-top: 20px; animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        #messageContainer { display: none; margin-top: 15px; animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
         @keyframes popIn { 0% { opacity: 0; transform: scale(0.3); } 50% { transform: scale(1.05); } 100% { opacity: 1; transform: scale(1); } }
         
-        .message { color: #7030A0; font-weight: bold; font-size: 17px; line-height: 1.6; }
-        .highlight { color: #FF3333; font-size: 20px; }
+        .message { color: #7030A0; font-weight: bold; font-size: 16px; line-height: 1.6; }
+        .highlight { color: #FF6B6B; font-size: 19px; }
 
         /* ตั้งค่าระบบพลุหัวใจ (Particle System) */
         #heart-container {
@@ -110,17 +128,21 @@
     <div id="heart-container"></div>
 
     <div class="card">
-        <h2>✨กำลังใจจาก KITO MOS✨</h2>
-        <div class="subtitle" id="subtitleText">ตรวจพบ : คุณพยาบาลทำงานเหนื่อยมาก! 🥺💖</div>
+        <h2>✨ พลังสู้ๆ จาก KITO MOS ✨</h2>
         
-        <button id="loveBtn" onclick="explodeHearts()">✨ กดรับกำลังใจจากมอสกีโต้ ✨</button>
+        <!-- รูปภาพสองนิ้วของมึง -->
+        <img src="WIN_20261007_00_41_46_Pro.jpg" alt="กำลังใจสองนิ้ว" class="profile-pic">
+
+        <div class="subtitle" id="subtitleText">ตรวจพบ : พยาบาลคนเก่งกำลังเหนื่อย! 🥺💉</div>
+        
+        <button id="loveBtn" onclick="explodeHearts()">✌️ กดรับพลังสู้ๆ สองนิ้ว ✌️</button>
 
         <div id="messageContainer">
             <div class="message">
-                <span class="highlight">ปิ้ววววววววว! ❤️💖💕✨</span><br><br>
-                ขอให้หายเหนื่อยน้าาาา<br>
-                เก่งมากแล้วน้าาคนเก่งที่ผ่านวันนี้มาได้!<br><br>
-                 เดี๋ยวจะอยู่เป็นเพื่อนแกเองคืนนี้💆‍♀️🫶
+                <span class="highlight">ฟิ้ววววววววว! ✌️💖✨</span><br><br>
+                ส่งกำลังใจให้ 2 นิ้วเลย!<br>
+                เหนื่อยก็พักนะคนเก่ง เก่งมากแล้วที่ลุยมาถึงตอนนี้<br><br>
+                เดี๋ยวไอ้ยักษ์คนนี้อยู่เป็นเพื่อนเอง 💆‍♀️🫶
             </div>
         </div>
     </div>
@@ -133,10 +155,11 @@
             document.getElementById("messageContainer").style.display = "block";
 
             const container = document.getElementById("heart-container");
-            const emojis = ["❤️", "💖", "💕", "✨", "🫶", "🥰"];
-            const totalHearts = 200; // จำนวนหัวใจที่ต้องการให้พุ่งออกมา
+            // เปลี่ยนอีโมจิให้เข้ากับธีม "สองนิ้ว / สู้ๆ"
+            const emojis = ["✌️", "✌🏻", "💖", "✨", "💪", "🫶"];
+            const totalHearts = 150; 
 
-            // ฟังก์ชันเสกหัวใจทีละดวง
+            // ฟังก์ชันเสกอีโมจิทีละดวง
             for (let i = 0; i < totalHearts; i++) {
                 setTimeout(() => {
                     const heart = document.createElement("div");
@@ -155,9 +178,9 @@
 
                     // สร้าง Animation ด้วย JavaScript Web Animations API
                     heart.animate([
-                        { transform: `translate(-50%, 0px) scale(0.5)`, opacity: 1 },
-                        { transform: `translate(calc(-50% + ${spreadX/2}px), ${flyHeight/2}px) scale(1.2)`, opacity: 1 },
-                        { transform: `translate(calc(-50% + ${spreadX}px), ${flyHeight}px) scale(0.8)`, opacity: 0 }
+                        { transform: `translate(-50%, 0px) scale(0.5) rotate(0deg)`, opacity: 1 },
+                        { transform: `translate(calc(-50% + ${spreadX/2}px), ${flyHeight/2}px) scale(1.2) rotate(${Math.random()*180}deg)`, opacity: 1 },
+                        { transform: `translate(calc(-50% + ${spreadX}px), ${flyHeight}px) scale(0.8) rotate(${Math.random()*360}deg)`, opacity: 0 }
                     ], {
                         duration: duration,
                         easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
@@ -166,12 +189,12 @@
 
                     container.appendChild(heart);
                     
-                    // เคลียร์ DOM เมื่อ Animation จบเพื่อไม่ให้เครื่องค้าง
+                    // เคลียร์ DOM เมื่อ Animation จบ
                     setTimeout(() => {
                         heart.remove();
                     }, duration);
 
-                }, i * 15); // ดีเลย์การเกิดทีละ 15 milliseconds ให้ดูพุ่งเป็นสายน้ำ
+                }, i * 15);
             }
         }
     </script>
